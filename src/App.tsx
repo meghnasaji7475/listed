@@ -2,8 +2,15 @@ import { Routes,  Route, useNavigationType, useLocation,} from "react-router-dom
 import SignIn from "./pages/SignIn";
 import Dashboard from "./pages/Dashboard";
 import { useEffect } from "react";
+import axios from 'axios';
 
 function App() {
+
+ 
+
+
+
+
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
@@ -43,10 +50,14 @@ function App() {
     }
   }, [pathname]);
 
+
+
   return (
+
     <Routes>
       <Route path="/" element={<SignIn />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      
     </Routes>
   );
 }

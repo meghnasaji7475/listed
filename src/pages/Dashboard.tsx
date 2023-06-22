@@ -1,4 +1,18 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
+import axios from 'axios';
+
+
+// const [data , setData] = useState([])
+
+
+const fetchUsers = async () => {
+ const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+ console.log (response);
+//  setData(response.data)
+}
+
+
+
 
 const Dashboard: FunctionComponent = () => {
   return (
@@ -10,7 +24,11 @@ const Dashboard: FunctionComponent = () => {
           Contact Us
         </div>
         <div className="absolute top-[43.64%] left-[31.43%] cursor-pointer">Settings</div>
-        <div className="absolute top-[37.08%] left-[31.43%] cursor-pointer">Users</div>
+        <div className="absolute top-[37.08%] left-[31.43%] cursor-pointer"
+         onClick={fetchUsers}>Users</div>
+        
+      
+        
         <div className="absolute top-[30.51%] left-[31.43%] cursor-pointer">Schedules</div>
         <div className="absolute top-[23.94%] left-[31.43%] cursor-pointer">Transactions</div>
         <b className="absolute top-[17.37%] left-[31.43%] cursor-pointer">Dashboard</b>
@@ -100,6 +118,8 @@ const Dashboard: FunctionComponent = () => {
           892
         </b>
       </div>
+{/* CHART */}
+
       <div className="absolute top-[289px] left-[380px] w-[1000px] h-[359px]">
         <div className="absolute top-[0px] left-[0px] w-[1000px] h-[359px]">
           <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-xl bg-white" />
@@ -114,8 +134,8 @@ const Dashboard: FunctionComponent = () => {
           Activities
         </b>
         <div className="absolute top-[57px] left-[40px] w-[124px] h-[17px] text-secondary-text font-montserrat">
-          <div className="absolute top-[0px] left-[0px] inline-block w-[111px]">
-            May - June 2021
+          <div className="absolute top-[0px] left-[0px] inline-block w-[111px]"><input type="date" />
+        
           </div>
           <img
             className="absolute h-[29.41%] w-[6.45%] top-[47.06%] right-[0%] bottom-[23.53%] left-[93.55%] max-w-full overflow-hidden max-h-full"
@@ -123,6 +143,10 @@ const Dashboard: FunctionComponent = () => {
             src="/vector3.svg"
           />
         </div>
+
+
+
+
         <div className="absolute top-[105px] left-[40px] w-[921px] h-[212px] text-secondary-text">
           <div className="absolute top-[0px] left-[0px] w-[921px] h-[17px]">
             <div className="absolute top-[0px] left-[0px] inline-block w-[25.34px]">
@@ -168,6 +192,10 @@ const Dashboard: FunctionComponent = () => {
         <div className="absolute top-[0px] left-[0px] w-[480px] h-64">
           <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-xl bg-white" />
         </div>
+
+
+     
+
         <div className="absolute top-[72px] left-[244px] w-[98px] h-9">
           <div className="absolute top-[3px] left-[0px] rounded-[50%] bg-darkseagreen w-[11px] h-[11px]" />
           <b className="absolute top-[0px] left-[21px]">Basic Tees</b>
@@ -177,7 +205,7 @@ const Dashboard: FunctionComponent = () => {
         </div>
         <div className="absolute top-[31px] left-[327px] w-[97px] h-[15px] text-xs text-secondary-text">
           <div className="absolute top-[0px] left-[0px] inline-block w-[97px]">
-            May - June 2021
+            <input type='date' />
           </div>
         </div>
         <img
